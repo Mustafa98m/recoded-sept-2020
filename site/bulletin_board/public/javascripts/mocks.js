@@ -1,4 +1,3 @@
-
 // Posts
 
 /**
@@ -17,7 +16,7 @@
 function create_post(title, message, callback) {
   var post = {
     title: title,
-    message: message
+    message: message,
   };
 
   var success = false;
@@ -33,12 +32,8 @@ function create_post(title, message, callback) {
 
   var result = {
     success: success,
-<<<<<<< HEAD
-    redirect_uri: "./view_post.html",
-=======
     redirect_uri: "posts/view",
->>>>>>> upstream/master
-    error_message: error_message
+    error_message: error_message,
   };
   callback(result);
 }
@@ -52,7 +47,7 @@ function create_post(title, message, callback) {
  */
 function upvote(state) {
   var vote = {
-    upvoted: state
+    upvoted: state,
   };
 }
 
@@ -74,7 +69,7 @@ function upvote(state) {
 function signup(username, password, callback) {
   var credentials = {
     username: username,
-    password: password
+    password: password,
   };
 
   var success = false;
@@ -90,12 +85,8 @@ function signup(username, password, callback) {
 
   var result = {
     success: success,
-<<<<<<< HEAD
-    redirect_uri: "./post_list.html",
-=======
     redirect_uri: "posts/recent",
->>>>>>> upstream/master
-    error_message: error_message
+    error_message: error_message,
   };
   callback(result);
 }
@@ -116,14 +107,15 @@ function signup(username, password, callback) {
 function login(username, password, callback) {
   var credentials = {
     username: username,
-    password: password
+    password: password,
   };
 
   var success = false;
   var error_message = "";
 
   if (credentials.username != "test") {
-    error_message = "We don't recognize your username. Did you want to sign up?";
+    error_message =
+      "We don't recognize your username. Did you want to sign up?";
   } else if (credentials.password != "123") {
     error_message = "Login failed.";
   } else {
@@ -132,12 +124,8 @@ function login(username, password, callback) {
 
   var result = {
     success: success,
-<<<<<<< HEAD
-    redirect_uri: "./post_list.html",
-=======
     redirect_uri: "posts/recent",
->>>>>>> upstream/master
-    error_message: error_message
+    error_message: error_message,
   };
   callback(result);
 }

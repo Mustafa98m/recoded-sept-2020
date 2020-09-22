@@ -1,7 +1,7 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
 
-var datasource = require('../data/mock_users.js')
+var datasource = require("../data/mock_users.js");
 
 /**
  * The "Login" endpoint.
@@ -17,10 +17,10 @@ var datasource = require('../data/mock_users.js')
  *   error_message: string
  * }
  */
-router.post('/login', function(req, res, next) {
+router.post("/login", function (req, res, next) {
   var credentials = req.body;
 
-  datasource.login(credentials, function(result) {
+  datasource.login(credentials, function (result) {
     if (!result.success) {
       res.status(403);
     }
@@ -42,10 +42,10 @@ router.post('/login', function(req, res, next) {
  *   error_message: string
  * }
  */
-router.post('/', function(req, res, next) {
+router.post("/", function (req, res, next) {
   var credentials = req.body;
 
-  datasource.signup(credentials, function(result) {
+  datasource.signup(credentials, function (result) {
     if (!result.success) {
       res.status(400);
     }
