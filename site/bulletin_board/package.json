@@ -3,7 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+<<<<<<< HEAD
     "start": "node ./bin/www"
+=======
+    "start": "node ./bin/www",
+    "debug": "nodemon --inspect ./bin/www"
+>>>>>>> upstream/master
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
