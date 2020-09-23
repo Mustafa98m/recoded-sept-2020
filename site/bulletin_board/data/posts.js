@@ -15,8 +15,15 @@ var posts = {}
  * }
  */
 posts.retrieve = (id, callback) => {
+<<<<<<< HEAD
   db.get("SELECT Posts.title, Users.username AS author, Posts.date, Substr(Posts.body, 0, 140) AS excerpt, false AS liked, '/posts/' + Posts.id AS url FROM Posts INNER JOIN Users ON Posts.user_id = Users.id ORDER BY date DESC WHERE Posts.id = ?", (err, row) => {
     if (err) {
+=======
+  db.get("SELECT Posts.title, Users.username AS author, Posts.date, Posts.body AS body, false AS liked, '/posts/' + Posts.id AS url FROM Posts INNER JOIN Users ON Posts.user_id = Users.id  WHERE Posts.id = ? ORDER BY date DESC",
+    [ id ],
+    (err, row) => {
+    if (err || !row) {
+>>>>>>> upstream/master
       callback(null);
       return;
     }
